@@ -10,7 +10,7 @@ let prenom = id("first-name"),
 form.addEventListener('submit', (e) => {
     if (prenom.value = "") 
         if (nom.value = "")
-            if (commentaire ="") 
+            if (commentaire.value ="") 
                 errorMessage.removeAttribute("style")
     
 });
