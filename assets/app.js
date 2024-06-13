@@ -7,7 +7,7 @@ let errorMessage = document.getElementById("error-message");
 let commentList = document.getElementsById("comment-list");
 let bouton = document.getElementById("bouton");
 
-// Je crée une fonction ajout du commentaire
+// Je crée une fonction : ajout du commentaire
 function addComment() {
     // Je crée une d1 dans commentList
     let d1 = createElement("div");
