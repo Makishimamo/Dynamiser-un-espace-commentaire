@@ -11,6 +11,6 @@ form.addEventListener('submit', (e) => {
     if (prenom.value = "") 
         if (nom.value = "")
             if (commentaire.value ="") 
-                errorMessage.removeAttribute("style")
+                errorMessage.removeAttribute("style");
     
 });
