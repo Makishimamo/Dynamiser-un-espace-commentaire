@@ -8,9 +8,11 @@ let prenom = id("first-name"),
 
 
 form.addEventListener('submit', (e) => {
-    if (prenom.value = "") 
-        if (nom.value = "")
-            if (commentaire.value ="") 
+    if (prenom.value = "") {
+        if (nom.value = "") {
+            if (commentaire.value ="") {
                 errorMessage.removeAttribute("style");
-    
+            }
+        }
+    }        
 });
