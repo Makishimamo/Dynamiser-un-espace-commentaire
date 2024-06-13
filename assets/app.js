@@ -1,18 +1,24 @@
-let id = (id) => document.getElementById(id);
+// Je crée mes variables
+let prenom = document.getElementById("first-name"); 
+let nom = document.getElementById("last-name");
+let commentaire = document.getElementById("message");
+let form = document.getElementById("form");
+let errorMessage = document.getElementById("error-message");
 
-let prenom = id("first-name"),
-    nom = id ("last-name"),
-    commentaire = id ("message"),
-    form = id ("form"),
-    errorMessage = id("error-message");
-
-
-form.addEventListener('submit', (e) => {
-    if (prenom.value = "") {
-        if (nom.value = "") {
-            if (commentaire.value ="") {
-                errorMessage.removeAttribute("style");
-            }
-        }
-    }        
-});
+// Vérifier les champs du formulaire
+try {
+    if (!prenom) {
+        throw new Error ('Le prénom est requis');
+    } else if (!nom) {
+        throw new Error ('Le nom est requis');
+    } else if (!commentaire) {
+        throw new Error ('Le commentaire est requis');
+    } else if (commentaire.length > 500) {
+        throw new Error ('Le commentaire est trop long (500 maximum)');
+    }   
+} 
+// Gestion des erreurs
+catch (err) {
+    errorMessage.removeAttribute("style");
+    console.log ("Erreur : " +err.message);
+}
