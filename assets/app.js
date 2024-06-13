@@ -1,18 +1,38 @@
-// Je crée mes variables
-let prenom = document.getElementById("first-name"); 
-let nom = document.getElementById("last-name");
-let commentaire = document.getElementById("message");
-let form = document.getElementById("form");
-let errorMessage = document.getElementById("error-message");
-let commentList = document.getElementsById("comment-list");
-let bouton = document.getElementById("bouton");
+/*
+// Je test que mon fichier js est bien lié à mon html
+alert("Hello!")
+*/
 
-// Je crée une fonction : ajout du commentaire
-function addComment() {
-    // Je crée une d1 dans commentList
-    let d1 = createElement("div");
+// Je crée une fonction pour ajouter un commentaire
+function comment(prenom, nom, commentaire) {
+    // Je crée une div que je stoque dans d1
+    let d1 = document.createElement("div");
+
+    // J'ajoute l'attribue class à d1
     d1.setAttribute("class", "flex space-x-4 text-sm text-gray-500");
-    commentList.appendChild(d1);
+
+    // Je recupère le contenue de mes input que je place dans des variables
+    var prenom = document.getElementById("first-name");
+    var nom = document.querySelector("#last-name");
+    var commentaire = document.querySelector("#message");
+
+    // Je vérifie dans la console que mes variables contiennent les bonnes valeurs
+    console.log(prenom, nom, commentaire);
+
+    // Je remplace le contenue de d1 par le code HTML suivant :
+    d1.innerHTML = 
+    `<div class="flex-1 py-10 ">
+        <h3 class="font-medium text-gray-900">${prenom} ${nom}</h3>
+        <div class="prose prose-sm mt-4 max-w-none text-gray-500">
+            <p>${commentaire}</p>
+        </div>
+    </div>`;
+
+    // Je place d1 dans la div contenant l'id : comment-list
+    document.querySelector("#comment-list").appendChild(d1);
+
+
+    /*
     // Je crée une d2 dans d1
     let d2 = createElement("div");
     d2.setAttribute("class", "flex-1 py-10");
@@ -34,9 +54,18 @@ function addComment() {
     // Je récupère le commentaire et je l'insère dans newParagraph
     let newParagraphContent = commentaire.value;
     newParagraph.appendChild(commentaire.value);
+    */
 }
+
 // Je lie ma fonction addComment au bouton HTML
-bouton.addEventListener("submit", addComment);
+document.querySelector("#bouton").addEventListener("click", comment());
+
+/*
+// Je test l'appel de ma fonction au clic
+function test() {
+    alert("ok");
+}
+*/
 
 /*
 // Vérifier les champs du formulaire
