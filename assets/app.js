@@ -6,8 +6,9 @@ alert("Hello!")
 const prenom = document.getElementById("first-name");
 const nom = document.getElementById("last-name");
 const message = document.getElementById("message");
-let errorMessage = document.getElementById("error-message");
-let commentList = document.getElementById("comment-list");
+const errorMessage = document.getElementById("error-message");
+const commentList = document.getElementById("comment-list");
+const bouton = document.getElementById("bouton");
 
 // Je récupère dans une variable la valeur de chaque champs et je vérifie dans la console
 prenom.addEventListener('input', function(e) {
@@ -54,7 +55,7 @@ function addComment() {
 }
 
 // Je lie ma fonction addComment au bouton HTML
-document.getElementById("bouton").addEventListener("click", addComment);
+bouton.addEventListener("click", addComment);
 
 /* // Je test l'appel de ma fonction au clic
 function test() {
