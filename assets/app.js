@@ -2,17 +2,31 @@
 alert("Hello!")
 */
 
-// Je récupère la valeur des champs dans des variables
-    const dataComment = {
-        prenom: document.getElementById("first-name").value,
-        nom: document.getElementById("last-name").value,
-        text: document.getElementById("message").value,
-    };
-    
-    let commentList = document.getElementById("comment-list");
+// Je crée mes variables
+const prenom = document.getElementById("first-name");
+const nom = document.getElementById("last-name");
+const text = document.getElementById("message");
+let errorMessage = document.getElementById("error-message");
+let commentList = document.getElementById("comment-list");
 
-// Je vérifie dans la console que mes variables contiennent les bonnes valeurs
-console.log(dataComment.prenom, dataComment.nom, dataComment.text);
+// Je vérifie si les champs sont remplit
+prenom.addEventListener('input', function(e) {
+    if(e.target.value === "") {
+        errorMessage.removeAttribute("style");
+    }
+})
+
+nom.addEventListener('input', function(e){
+    if(e.target.value === "") {
+        errorMessage.removeAttribute("style");
+    }
+})
+
+text.addEventListener('input', function(e){
+    if(e.target.value === "") {
+        errorMessage.removeAttribute("style");
+    }
+})
 
 // Je crée une fonction pour ajouter un commentaire
 function addComment() {
@@ -20,9 +34,9 @@ function addComment() {
     const comment = `
         <div class="flex space-x-4 text-sm text-gray-500"
             <div class="flex-1 py-10 ">
-                <h3 class="font-medium text-gray-900">${comment.prenom} ${comment.nom}</h3>
+                <h3 class="font-medium text-gray-900">${prenom.e.target.value} ${nom.e.target.value}</h3>
                 <div class="prose prose-sm mt-4 max-w-none text-gray-500">
-                    <p>${comment.text}</p>
+                    <p>${text.e.target.value}</p>
                 </div>
             </div>
         </div>    
@@ -57,7 +71,7 @@ function addComment() {
 }
 
 // Je lie ma fonction addComment au bouton HTML
-document.querySelector("#bouton").addEventListener("click", addComment);
+document.getElementById("bouton").addEventListener("click", addComment);
 
 /* // Je test l'appel de ma fonction au clic
 function test() {
@@ -80,7 +94,7 @@ try {
 } 
 // Gestion des erreurs
 catch (err) {
-    errorMessage.removeAttribute("style");
+    
     console.log ("Erreur : " +err.message);
 }
 */
