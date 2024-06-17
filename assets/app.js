@@ -17,7 +17,7 @@ prenom.addEventListener('input', function(e) {
     }
     let prenomText = e.target.value;
     console.log(prenomText);
-})
+});
 
 nom.addEventListener('input', function(e){
     if(e.target.value === "") {
@@ -25,7 +25,7 @@ nom.addEventListener('input', function(e){
     }
     let nomText = e.target.value;
     console.log(nomText);
-})
+});
 
 message.addEventListener('input', function(e){
     if(e.target.value === "") {
@@ -39,28 +39,28 @@ message.addEventListener('input', function(e){
 const addComment = () => {
     alert("ok")
     //Je crée mes éléments
-    let d1 = document.createElement("div")
-    let d2 = document.createElement("div")
-    let d3 = document.createElement("div")
-    let title = document.createElement("h3")
-    let para = document.createElement("p")
+    let d1 = document.createElement("div");
+    let d2 = document.createElement("div");
+    let d3 = document.createElement("div");
+    let title = document.createElement("h3");
+    let para = document.createElement("p");
     
     // J'ajoute une class aux éléments
-    d1.classList.add("flex space-x-4 text-sm text-gray-500")
-    d2.classList.add("flex-1 py-10")
-    d3.classList.add("prose prose-sm mt-4 max-w-none text-gray-500")
-    title.classList.add("font-medium text-gray-900")
+    d1.classList.add("flex space-x-4 text-sm text-gray-500");
+    d2.classList.add("flex-1 py-10");
+    d3.classList.add("prose prose-sm mt-4 max-w-none text-gray-500");
+    title.classList.add("font-medium text-gray-900");
 
     // Je définis la valeur des différents éléments
-    title.insertAdjacentElement = ("afterbegin", prenomText + " " + nomText)
-    para.insertAdjacentElement = ("afterbegin", messageText)
+    title.insertAdjacentElement = ("afterbegin", prenomText + " " + nomText);
+    para.insertAdjacentElement = ("afterbegin", messageText);
     
     // Je place mes éléments aux bons endroits
-    commentList.appendChild(d1)
-    d1.append(d2)
-    d2.append(title)
-    d2.append(d3)
-    d3.append(para)
+    commentList.appendChild(d1);
+    d1.append(d2);
+    d2.append(title);
+    d2.append(d3);
+    d3.append(para);
 }
 
 
