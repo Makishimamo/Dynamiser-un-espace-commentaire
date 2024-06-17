@@ -1,4 +1,4 @@
-/* // Je test que mon fichier js est bien lié à mon html
+/* // Je test que mon fichier app.js est bien lié à mon index.html
 alert("Hello!")
 */
 
@@ -10,7 +10,17 @@ const errorMessage = document.querySelector("#error-message");
 const commentList = document.querySelector("#comment-list");
 const bouton = document.querySelector("#bouton");
 
-// Je récupère dans une variable la valeur de chaque champs et je vérifie dans la console
+/* // Je test que mes variables sont bien créer
+console.log(prenom);
+console.log(nom);
+console.log(message);
+console.log(errorMessage);
+console.log(commentList);
+console.log(bouton);
+*/
+
+// Je récupère dans une variable la valeur de chaque champs 
+// Je vérifie que la variable contient bien la valeur du champ dans la console
 prenom.addEventListener('input', function(e) {
     if(e.target.value === "") {
         errorMessage.removeAttribute("style");
@@ -33,36 +43,42 @@ message.addEventListener('input', function(e){
     }
     let messageText = e.target.value;
     console.log(messageText);
-})
+});
 
 // Je crée une fonction pour ajouter un commentaire
 const addComment = () => {
+    /*// Je vérifie que ma fonction est bien appeler au click du bouton
     alert("ok")
-    //Je crée mes éléments
+    */
+
+    //Je crée mes nouveaux éléments
     let d1 = document.createElement("div");
     let d2 = document.createElement("div");
     let d3 = document.createElement("div");
     let title = document.createElement("h3");
     let para = document.createElement("p");
-    
-    // J'ajoute une class aux éléments
-    d1.classList.add("flex space-x-4 text-sm text-gray-500");
-    d2.classList.add("flex-1 py-10");
-    d3.classList.add("prose prose-sm mt-4 max-w-none text-gray-500");
-    title.classList.add("font-medium text-gray-900");
 
-    // Je définis la valeur des différents éléments
-    title.insertAdjacentElement = ("afterbegin", prenomText + " " + nomText);
-    para.insertAdjacentElement = ("afterbegin", messageText);
+    console.log(d1, d2, d3, title, para);
     
-    // Je place mes éléments aux bons endroits
-    commentList.appendChild(d1);
-    d1.append(d2);
-    d2.append(title);
-    d2.append(d3);
-    d3.append(para);
+    // // J'ajoute une class aux éléments
+    // d1.classList.add("flex space-x-4 text-sm text-gray-500");
+    // d2.classList.add("flex-1 py-10");
+    // d3.classList.add("prose prose-sm mt-4 max-w-none text-gray-500");
+    // title.classList.add("font-medium text-gray-900");
+
+    // // Je définis la valeur des différents éléments
+    // title.insertAdjacentElement = ("afterbegin", prenomText + " " + nomText);
+    // para.insertAdjacentElement = ("afterbegin", messageText);
+    
+    // // Je place mes éléments aux bons endroits
+    // commentList.appendChild(d1);
+    // d1.append(d2);
+    // d2.append(title);
+    // d2.append(d3);
+    // d3.append(para);
 }
 
+bouton.addEventListener("click", addComment);
 
     // // Autre méthode : Je crée le nouveau commentaire
     // const comment = `
@@ -82,10 +98,4 @@ const addComment = () => {
 
 // Je lie ma fonction addComment au bouton HTML
 
-bouton.addEventListener("click", addComment);
 
-/* // Je test l'appel de ma fonction au clic
-function test() {
-    alert("ok");
-}
-*/
